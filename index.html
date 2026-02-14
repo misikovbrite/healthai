@@ -26,13 +26,13 @@
             --nav-bg:rgba(242,242,242,.88);
             --input-bg:rgba(35,49,55,.04);
             --g:#233137;--g2:#2D4149;--gbg:rgba(35,49,55,0.06);--gbr:rgba(35,49,55,0.15);
-            --r:#DC2626;--rbg:rgba(220,38,38,0.05);
-            --b:#3B82F6;--bbg:rgba(59,130,246,0.06);--bbr:rgba(59,130,246,0.14);
-            --p:#4A5C64;--pbg:rgba(74,92,100,0.06);
-            --o:#4A5C64;--obg:rgba(74,92,100,0.06);
-            --y:#4A5C64;--ybg:rgba(74,92,100,0.06);
-            --c:#4A5C64;--cbg:rgba(74,92,100,0.06);
-            --pk:#4A5C64;--pkbg:rgba(74,92,100,0.06);
+            --r:#C45454;--rbg:rgba(196,84,84,0.07);
+            --b:#3B82F6;--bbg:rgb(242,242,242);--bbr:rgba(59,130,246,0.14);
+            --p:#7C6B8A;--pbg:rgba(124,107,138,0.08);
+            --o:#B8854F;--obg:rgba(184,133,79,0.08);
+            --y:#9E8A4F;--ybg:rgba(158,138,79,0.08);
+            --c:#4A8C8C;--cbg:rgba(74,140,140,0.08);
+            --pk:#B06B84;--pkbg:rgba(176,107,132,0.08);
             --rd:10px;--rd2:14px;--rd3:20px;
             --accent:#233137;
             --accent2:#2D4149;
@@ -55,13 +55,13 @@
             --nav-bg:rgba(10,10,10,.85);
             --input-bg:rgba(255,255,255,.06);
             --g:#FFFFFF;--g2:#D1D5DB;--gbg:rgba(255,255,255,0.06);--gbr:rgba(255,255,255,0.15);
-            --r:#EF4444;--rbg:rgba(239,68,68,0.08);
+            --r:#E07070;--rbg:rgba(224,112,112,0.10);
             --b:#60A5FA;--bbg:rgba(96,165,250,0.08);--bbr:rgba(96,165,250,0.18);
-            --p:#9CA3AF;--pbg:rgba(156,163,175,0.08);
-            --o:#9CA3AF;--obg:rgba(156,163,175,0.08);
-            --y:#9CA3AF;--ybg:rgba(156,163,175,0.08);
-            --c:#9CA3AF;--cbg:rgba(156,163,175,0.08);
-            --pk:#9CA3AF;--pkbg:rgba(156,163,175,0.08);
+            --p:#B49DC4;--pbg:rgba(180,157,196,0.12);
+            --o:#D4A46E;--obg:rgba(212,164,110,0.12);
+            --y:#C4B06E;--ybg:rgba(196,176,110,0.12);
+            --c:#6BB8B8;--cbg:rgba(107,184,184,0.12);
+            --pk:#D48EA6;--pkbg:rgba(212,142,166,0.12);
             --accent:#FFFFFF;
             --accent2:#D1D5DB;
             --shine:none;
@@ -366,7 +366,7 @@
         .explore-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--border2)}
         .explore-card:active{transform:scale(.97)}
         .ec-glow{display:none}
-        .ec-icon{font-size:24px;color:var(--text2);display:block;position:relative;z-index:1;margin-bottom:4px}
+        .ec-icon{font-size:24px;display:block;position:relative;z-index:1;margin-bottom:4px}
         .ec-badge{position:absolute;top:16px;right:16px;padding:4px 10px;border-radius:50px;font-size:10px;font-weight:700;font-family:var(--font-mono);background:var(--bbg);color:var(--b)}
         .ec-title{font-size:14px;font-weight:800;position:relative;z-index:1;letter-spacing:-.2px}
         .ec-sub{font-size:10px;color:var(--text3);position:relative;z-index:1;font-weight:500}
@@ -2012,8 +2012,8 @@ ${ev([{t:'Активное восстановление (лёгкое карди
         const P=getP();
         const ks=Object.keys(P);
         const tabIcons={training:'fa-solid fa-dumbbell',nutrition:'fa-solid fa-utensils',sleep:'fa-solid fa-moon',supplements:'fa-solid fa-capsules',skin:'fa-solid fa-sun',body:'fa-solid fa-crosshairs',hormones:'fa-solid fa-fire',gut:'fa-solid fa-seedling',breathing:'fa-solid fa-wind',biohacking:'fa-solid fa-flask',teeth:'fa-solid fa-tooth',fasting:'fa-solid fa-hourglass-half',monitoring:'fa-solid fa-vial',stress:'fa-solid fa-brain',longevity:'fa-solid fa-dna',posture:'fa-solid fa-user-check',water:'fa-solid fa-droplet',recovery:'fa-solid fa-battery-three-quarters'};
-        const sectionColors={training:'var(--text2)',nutrition:'var(--text2)',sleep:'var(--text2)',supplements:'var(--text2)',skin:'var(--text2)',body:'var(--text2)',hormones:'var(--text2)',gut:'var(--text2)',breathing:'var(--text2)',biohacking:'var(--text2)',teeth:'var(--text2)',fasting:'var(--text2)',monitoring:'var(--text2)',stress:'var(--text2)',longevity:'var(--text2)',posture:'var(--text2)',water:'var(--text2)',recovery:'var(--text2)'};
-        const cardGrid=ks.map(k=>{const s=P[k];const ic=tabIcons[k]||'fa-solid fa-star';return `<div class="explore-card" onclick="switchExploreView('list');setTimeout(()=>spt('${k}'),100)"><i class="${ic} ec-icon"></i><div class="ec-badge">${s.items.length}</div><div class="ec-title">${s.t}</div><div class="ec-sub">${s.items.length} карточек</div></div>`}).join('');
+        const sectionColors={training:'var(--g)',nutrition:'var(--o)',sleep:'var(--p)',supplements:'var(--b)',skin:'var(--pk)',body:'var(--g)',hormones:'var(--r)',gut:'var(--o)',breathing:'var(--c)',biohacking:'var(--b)',teeth:'var(--y)',fasting:'var(--y)',monitoring:'var(--c)',stress:'var(--r)',longevity:'var(--p)',posture:'var(--g)',water:'var(--c)',recovery:'var(--b)'};
+        const cardGrid=ks.map(k=>{const s=P[k];const col=sectionColors[k]||'var(--g)';const ic=tabIcons[k]||'fa-solid fa-star';return `<div class="explore-card" onclick="switchExploreView('list');setTimeout(()=>spt('${k}'),100)"><i class="${ic} ec-icon" style="color:${col}"></i><div class="ec-badge" style="color:${col}">${s.items.length}</div><div class="ec-title">${s.t}</div><div class="ec-sub">${s.items.length} карточек</div></div>`}).join('');
         document.getElementById('pg-explore').innerHTML=`
     <div class="ph"><h1><i class="fa-solid fa-compass" style="margin-right:8px;font-size:18px;color:var(--g)"></i>Explore</h1><p>${Object.keys(P).length} разделов · доказательная база</p></div>
     <div class="explore-toggle"><button class="on" onclick="switchExploreView('grid')">Карточки</button><button onclick="switchExploreView('list')">Список</button></div>
