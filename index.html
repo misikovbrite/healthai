@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Longevity Blueprint</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <meta name="theme-color" content="#F2F2F2">
@@ -38,7 +38,10 @@
             --accent2:#2D4149;
             --shine:none;
             --progress:#3B82F6;
-            --spacing-xs:4px;--spacing-sm:8px;--spacing-md:16px;--spacing-lg:24px;--spacing-xl:32px;
+            --spacing-xs:6px;--spacing-sm:10px;--spacing-md:20px;--spacing-lg:28px;--spacing-xl:40px;
+            --font-display:'Instrument Serif',Georgia,serif;
+            --font-body:'Inter',system-ui,-apple-system,sans-serif;
+            --font-mono:'JetBrains Mono',monospace;
         }
         [data-theme="dark"] {
             --bg:#0A0A0A;--bg2:#141414;--bg3:#1E1E1E;
@@ -349,9 +352,9 @@
         .ce-dr{position:absolute;top:14px;right:14px;font-size:9px;font-weight:600;opacity:.4;font-family:'JetBrains Mono',monospace}
 
         /* ========== EXPLORE PAGE — Clean ========== */
-        .ph{padding:32px 0 18px}
-        .ph h1{font-size:22px;font-weight:800;letter-spacing:-.4px;display:flex;align-items:center}
-        .ph p{font-size:12px;color:var(--text3);margin-top:5px;font-weight:500}
+        .ph{padding:36px 0 22px}
+        .ph h1{font-size:24px;font-weight:800;letter-spacing:-.4px;display:flex;align-items:center}
+        .ph p{font-size:12px;color:var(--text3);margin-top:6px;font-weight:500}
 
         .explore-toggle{display:flex;gap:4px;padding:0;margin-bottom:18px;background:var(--card-solid);border-radius:14px;padding:3px;border:1px solid var(--border);box-shadow:var(--shadow)}
         .explore-toggle button{flex:1;padding:10px;border-radius:12px;font-size:12px;font-weight:600;color:var(--text3);background:transparent;border:none;cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1)}
@@ -359,66 +362,68 @@
         .explore-toggle button:active{transform:scale(.96)}
 
         .explore-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding:0}
-        .explore-card{padding:20px 16px;border-radius:var(--rd2);background:var(--card-solid);border:1px solid var(--border);cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;box-shadow:var(--shadow)}
-        .explore-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+        .explore-card{padding:24px 20px;border-radius:16px;background:var(--card-solid);border:1px solid var(--border);cursor:pointer;transition:all .35s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px}
+        .explore-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--border2)}
         .explore-card:active{transform:scale(.97)}
         .ec-glow{display:none}
-        .ec-icon{font-size:22px;color:var(--text2);margin-bottom:12px;display:block;position:relative;z-index:1}
-        .ec-badge{position:absolute;top:14px;right:14px;padding:3px 9px;border-radius:50px;font-size:10px;font-weight:700;font-family:'JetBrains Mono',monospace}
-        .ec-title{font-size:13px;font-weight:700;position:relative;z-index:1;letter-spacing:-.1px}
-        .ec-sub{font-size:10px;color:var(--text3);margin-top:4px;position:relative;z-index:1}
+        .ec-icon{font-size:24px;color:var(--text2);display:block;position:relative;z-index:1;margin-bottom:4px}
+        .ec-badge{position:absolute;top:16px;right:16px;padding:4px 10px;border-radius:50px;font-size:10px;font-weight:700;font-family:var(--font-mono);background:var(--bbg);color:var(--b)}
+        .ec-title{font-size:14px;font-weight:800;position:relative;z-index:1;letter-spacing:-.2px}
+        .ec-sub{font-size:10px;color:var(--text3);position:relative;z-index:1;font-weight:500}
 
         /* ========== PLAN TABS — Pill Style ========== */
         .ptabs-wrap{overflow-x:auto;padding:0 0 10px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
         .ptabs-wrap::-webkit-scrollbar{display:none}
         .ptabs{display:flex;gap:6px;padding:2px 0}
-        .pt{flex-shrink:0;padding:8px 16px;border-radius:50px;font-size:11px;font-weight:600;color:var(--text3);background:var(--card-solid);border:1px solid var(--border);cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);white-space:nowrap;display:flex;align-items:center;box-shadow:var(--shadow)}
-        .pt.on{background:var(--gbg);color:var(--g);border-color:var(--gbr)}
+        .pt{flex-shrink:0;padding:9px 18px;border-radius:50px;font-size:12px;font-weight:600;color:var(--text3);background:transparent;border:1.5px solid var(--border);cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);white-space:nowrap;display:flex;align-items:center}
+        .pt.on{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:var(--shadow)}
         .pt:active{transform:scale(.94)}
         .pcont{padding:0}
         .ps{display:none}
         .ps.on{display:block;animation:pgIn .4s cubic-bezier(.16,1,.3,1)}
 
         /* ========== ACCORDION CARDS — Clean Premium ========== */
-        .ac{margin-bottom:14px;border-radius:var(--rd2);background:var(--card-solid);border:1px solid var(--border);overflow:hidden;transition:all .35s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow)}
+        .ac{margin-bottom:16px;border-radius:16px;background:var(--card-solid);border:1px solid var(--border);overflow:hidden;transition:all .35s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow)}
         .ac.open{border-color:var(--border2);box-shadow:var(--shadow-lg)}
-        .ac-h{display:flex;align-items:center;gap:14px;padding:16px 18px;cursor:pointer;transition:background .2s}
+        .ac-h{display:flex;align-items:center;gap:16px;padding:18px 20px;cursor:pointer;transition:background .2s}
         .ac-h:active{background:var(--glass3)}
-        .ac-ic{width:40px;height:40px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+        .ac-ic{width:44px;height:44px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
         .ac-inf{flex:1;min-width:0}
-        .ac-inf h3{font-size:14px;font-weight:700;display:flex;align-items:center;gap:7px;flex-wrap:wrap;letter-spacing:-.1px}
-        .ac-inf span{display:block;font-size:11px;color:var(--text3);margin-top:3px}
-        .ac-badge{display:inline-flex;padding:3px 8px;border-radius:50px;font-size:9px;font-weight:700;white-space:nowrap;letter-spacing:.2px}
+        .ac-inf h3{font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px;flex-wrap:wrap;letter-spacing:-.15px}
+        .ac-inf span{display:block;font-size:11.5px;color:var(--text3);margin-top:4px;font-weight:500}
+        .ac-badge{display:inline-flex;padding:3px 9px;border-radius:50px;font-size:9px;font-weight:700;white-space:nowrap;letter-spacing:.3px;font-family:var(--font-mono)}
         .ac-arr{font-size:11px;color:var(--text3);transition:transform .4s cubic-bezier(.16,1,.3,1);flex-shrink:0}
         .ac.open .ac-arr{transform:rotate(180deg);color:var(--g)}
         .ac-bd{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.16,1,.3,1)}
-        .ac-in{padding:0 20px 24px;font-size:12.5px;color:var(--text2);line-height:1.8;font-weight:400}
-        .ac-in p{margin-bottom:12px}
+        .ac-in{padding:4px 24px 28px;font-size:12.5px;color:var(--text2);line-height:1.85;font-weight:400}
+        .ac-in p{margin-bottom:14px}
         .ac-in strong{color:var(--text);font-weight:700}
 
-        /* Inline items */
-        .it{display:flex;gap:10px;margin:7px 0}
-        .it-d{width:5px;height:5px;border-radius:50%;background:var(--g);margin-top:8px;flex-shrink:0}
+        /* Inline items — refined */
+        .it{display:flex;gap:12px;margin:8px 0;padding:10px 14px;border-radius:10px;background:var(--glass3);transition:background .2s}
+        .it-d{width:6px;height:6px;border-radius:50%;background:var(--b);margin-top:7px;flex-shrink:0;opacity:.7}
         .it-t{font-size:12.5px;line-height:1.75;color:var(--text2);font-weight:400}
-        .it-t strong{color:var(--text)}
+        .it-t strong{color:var(--text);font-weight:700}
 
-        /* Highlight boxes */
-        .hl{padding:12px 16px;border-radius:14px;margin:12px 0 8px;font-size:12px;line-height:1.7;display:flex;align-items:flex-start;gap:10px;border:1px solid}
-        .hl i{margin-top:3px;font-size:11px;flex-shrink:0}
-        .hl.t{background:var(--gbg);border-color:var(--gbr);color:var(--g)}
-        .hl.w{background:var(--rbg);border-color:rgba(248,113,113,.10);color:var(--r)}
-        .hl.i{background:var(--bbg);border-color:var(--bbr);color:var(--b)}
+        /* Highlight boxes — refined */
+        .hl{padding:16px 18px;border-radius:14px;margin:16px 0 12px;font-size:12.5px;line-height:1.7;display:flex;align-items:flex-start;gap:12px;border:1px solid}
+        .hl i{margin-top:2px;font-size:12px;flex-shrink:0;opacity:.85}
+        .hl.t{background:rgba(35,49,55,0.03);border-color:rgba(35,49,55,0.10);color:var(--g)}
+        .hl.w{background:rgba(220,38,38,0.03);border-color:rgba(220,38,38,0.08);color:var(--r)}
+        .hl.i{background:rgba(59,130,246,0.04);border-color:rgba(59,130,246,0.10);color:var(--b)}
 
-        /* Supplement grid */
-        .sg{display:flex;flex-direction:column;gap:0;margin:8px 0;background:var(--card-solid);border-radius:14px;border:1px solid var(--border);overflow:hidden}
-        .sr{display:flex;align-items:center;gap:0;padding:11px 14px;border-bottom:1px solid var(--border)}
+        /* Supplement grid — refined */
+        .sg{display:flex;flex-direction:column;gap:0;margin:14px 0;background:var(--card-solid);border-radius:14px;border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow)}
+        .sg-header{padding:11px 16px;background:var(--glass3);border-bottom:1px solid var(--border);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);display:flex;align-items:center;gap:6px}
+        .sg-header i{font-size:10px;color:var(--b)}
+        .sr{display:flex;align-items:center;gap:0;padding:13px 16px;border-bottom:1px solid var(--border);transition:background .15s}
         .sr:last-child{border-bottom:none}
-        .sn{flex:1;font-size:12px;font-weight:600;color:var(--text)}
-        .sd{width:90px;font-size:11px;font-weight:700;color:var(--g);font-family:'JetBrains Mono',monospace;text-align:center}
+        .sn{flex:1;font-size:12.5px;font-weight:600;color:var(--text)}
+        .sd{width:90px;font-size:11px;font-weight:700;color:var(--b);font-family:var(--font-mono);text-align:center}
         .sw{flex:1;font-size:10px;color:var(--text3);text-align:right}
 
         /* Steps */
-        .steps{display:flex;flex-direction:column;gap:14px;margin:12px 0}
+        .steps{display:flex;flex-direction:column;gap:18px;margin:14px 0}
         .stp{display:flex;gap:14px;align-items:flex-start}
         .stp-n{width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0}
         .stp-c h4{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;letter-spacing:-.1px}
@@ -430,7 +435,7 @@
         .tgi i{font-size:5px;color:var(--g)}
 
         /* Evidence button */
-        .ev-btn{display:flex;align-items:center;gap:8px;width:100%;padding:14px 16px;margin:12px 0 4px;border-radius:var(--rd);background:var(--card-solid);border:1px solid var(--border);font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow)}
+        .ev-btn{display:flex;align-items:center;gap:8px;width:100%;padding:14px 16px;margin:16px 0 8px;border-radius:var(--rd);background:var(--card-solid);border:1px solid var(--border);font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;transition:all .3s cubic-bezier(.16,1,.3,1);box-shadow:var(--shadow)}
         .ev-btn:hover{border-color:var(--border2)}
         .ev-btn:active{transform:scale(.97)}
         .ev-btn i:first-child{color:var(--g);font-size:13px}
@@ -438,6 +443,52 @@
         .conf-bar{width:40px;height:3px;border-radius:2px;background:var(--border);overflow:hidden}
         .conf-bar-fill{height:100%;border-radius:2px;transition:width .6s cubic-bezier(.16,1,.3,1)}
         .ev-arrow{font-size:9px;opacity:.4;margin-left:2px}
+
+        /* ========== KEYWORD ACCENTS ========== */
+        .kw{color:var(--b);font-weight:700}
+        .kw-g{color:var(--g);font-weight:700}
+        .kw-r{color:var(--r);font-weight:700}
+
+        /* ========== RESEARCH TABLE — QOVES-style ========== */
+        .research-table{margin:16px 0;border:1px solid var(--border);border-radius:var(--rd2);overflow:hidden;background:var(--card-solid)}
+        .rt-header{padding:11px 16px;background:var(--glass3);border-bottom:1px solid var(--border);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);display:flex;align-items:center;gap:6px}
+        .rt-header i{font-size:10px;color:var(--b)}
+        .rt-row{display:flex;gap:0;border-bottom:1px solid var(--border);transition:background .2s}
+        .rt-row:last-child{border-bottom:none}
+        .rt-left{width:38%;padding:14px 16px;border-right:1px solid var(--border);display:flex;flex-direction:column;justify-content:center}
+        .rt-title{font-size:13px;font-weight:700;color:var(--text);line-height:1.4}
+        .rt-title .kw{font-weight:800}
+        .rt-right{flex:1;padding:14px 16px}
+        .rt-desc{font-size:12px;color:var(--text2);line-height:1.7}
+        .rt-source{font-size:10px;color:var(--text3);margin-top:6px;font-style:italic;display:flex;align-items:flex-start;gap:4px}
+        .rt-source i{font-size:8px;color:var(--b);margin-top:3px;flex-shrink:0}
+        @media(max-width:420px){
+            .rt-row{flex-direction:column}
+            .rt-left{width:100%;border-right:none;border-bottom:1px solid var(--border);padding:12px 16px 8px}
+            .rt-right{padding:8px 16px 14px}
+        }
+
+        /* ========== INLINE EVIDENCE ========== */
+        .ev-inline{margin:16px 0 8px;display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:var(--rd2);overflow:hidden;background:var(--card-solid)}
+        .ev-inline-header{display:flex;align-items:center;gap:8px;padding:11px 16px;background:var(--glass3);border-bottom:1px solid var(--border);font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.6px}
+        .ev-inline-header i{color:var(--b);font-size:11px}
+        .ev-inline-header .ev-count{margin-left:auto;font-family:var(--font-mono);font-size:10px}
+        .ei-item{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start}
+        .ei-item:last-of-type{border-bottom:none}
+        .ei-badge{flex-shrink:0;width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:11px}
+        .ei-content{flex:1}
+        .ei-finding{font-size:12px;color:var(--text);line-height:1.65;font-weight:500}
+        .ei-finding .num{color:var(--b);font-weight:800;font-family:var(--font-mono)}
+        .ei-source{font-size:10px;color:var(--text3);margin-top:4px;font-style:italic;line-height:1.5}
+        .ei-level{display:inline-flex;align-items:center;gap:3px;padding:2px 8px;border-radius:50px;font-size:8px;font-weight:700;margin-top:4px}
+        .ev-more-btn{padding:10px 16px;text-align:center;font-size:11px;font-weight:600;color:var(--b);cursor:pointer;transition:background .2s;border-top:1px solid var(--border);background:transparent}
+        .ev-more-btn:hover{background:var(--bbg)}
+
+        /* ========== SECTION HERO ========== */
+        .section-hero{padding:8px 0 20px;margin-bottom:8px}
+        .section-hero-badge{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:50px;background:var(--bbg);color:var(--b);font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
+        .section-hero-title{font-family:var(--font-display);font-size:28px;font-weight:400;color:var(--text);line-height:1.2}
+        .section-hero-sub{font-size:12px;color:var(--text3);margin-top:6px}
 
         /* ========== MODAL — Premium Sheet ========== */
         .modal-ov{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.55);backdrop-filter:blur(20px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s}
@@ -1283,7 +1334,10 @@
         const avgScore=Math.round(levels.reduce((a,l)=>a+l.score,0)/levels.length);
         const color=confColor(avgScore);
         evData.push({items,levels,avgScore});
-        return `<button class="ev-btn" onclick="openEvModal(${idx})"><i class="fa-solid fa-flask"></i>Доказательная база (${items.length})<span class="ev-conf" style="color:${color}"><span class="conf-bar"><span class="conf-bar-fill" style="width:${avgScore}%;background:${color}"></span></span>${avgScore}%<i class="fa-solid fa-chevron-right ev-arrow"></i></span></button>`;
+        const shown=items.slice(0,2);
+        const inlineCards=shown.map((e,i)=>{const lv=levels[i];return `<div class="ei-item"><div class="ei-badge" style="background:${lv.bg};color:${lv.color}"><i class="${lv.icon}"></i></div><div class="ei-content"><div class="ei-finding">${e.t}</div><div class="ei-source"><i class="fa-solid fa-bookmark"></i>${e.s}</div><div class="ei-level" style="background:${lv.bg};color:${lv.color}">${lv.label} · ${lv.score}%</div></div></div>`}).join('');
+        const moreBtn=items.length>2?`<div class="ev-more-btn" onclick="openEvModal(${idx})"><i class="fa-solid fa-plus" style="margin-right:4px;font-size:9px"></i>Ещё ${items.length-2} исследовани${items.length-2===1?'е':'й'}</div>`:'';
+        return `<div class="ev-inline"><div class="ev-inline-header"><i class="fa-solid fa-flask"></i>Доказательная база<span class="ev-count" style="color:${color}">${avgScore}% · ${items.length} ист.</span></div>${inlineCards}${moreBtn}</div>`;
     }
 
     function openEvModal(idx){
@@ -1340,12 +1394,13 @@
     // ========== PLAN SECTIONS ==========
     function getP(){ evData=[]; const age=parseInt(U.age)||30; const lvl=U.level||'Средний'; const weak=U.weak||[]; const skinP=U.skin||[]; const hasWeak=weak.length>0&&!weak.includes('Всё ок'); const P={
         training:{t:'Тренировки',items:[
-                {ic:'fa-solid fa-dumbbell',bg:'var(--gbg)',c:'var(--g)',t:'Силовые тренировки',s:'3–4 раза в неделю',badge:'-40% смертность',b:`<p>Главный драйвер долголетия и внешнего вида. Мышечная масса — лучший предиктор качества жизни после 40.</p>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Базовые движения:</strong> приседания, становая, жим, подтягивания, тяга в наклоне</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Прогрессивная перегрузка:</strong> каждую неделю добавлять вес или повторения</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Объём:</strong> 3–4 подхода по 6–12 повторений на группу</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Не пропускать ноги и спину</strong> — основа метаболизма и гормонального отклика</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Grip strength:</strong> фермерские прогулки, вис — один из лучших маркеров долголетия</div></div>
+                {ic:'fa-solid fa-dumbbell',bg:'var(--gbg)',c:'var(--g)',t:'Силовые тренировки',s:'3–4 раза в неделю',badge:'-40% смертность',b:`<p>Главный драйвер <span class="kw">долголетия</span> и внешнего вида. Мышечная масса — лучший предиктор качества жизни после 40.</p>
+<div class="research-table"><div class="rt-header"><i class="fa-solid fa-dumbbell"></i>Ключевые принципы</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Базовые</span> движения</div></div><div class="rt-right"><div class="rt-desc">Приседания, становая, жим, подтягивания, тяга в наклоне — охватывают все мышечные группы</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Прогрессивная</span> перегрузка</div></div><div class="rt-right"><div class="rt-desc">Каждую неделю добавлять вес или повторения — главный принцип роста</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Объём</span> тренировок</div></div><div class="rt-right"><div class="rt-desc">3–4 подхода по 6–12 повторений на группу мышц</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title">Ноги и <span class="kw">спина</span></div></div><div class="rt-right"><div class="rt-desc">Основа метаболизма и гормонального отклика — не пропускать</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Grip</span> strength</div></div><div class="rt-right"><div class="rt-desc">Фермерские прогулки, вис — один из лучших маркеров долголетия</div></div></div></div>
 ${ev([{t:'Силовые снижают риск смерти от всех причин на 15%. Комбинация силовых+аэробных — на 40%.',s:'Momma H. et al. — British Journal of Sports Medicine, 2022, мета-анализ 16 исследований, n=480,000+'},{t:'Сила хвата — независимый предиктор ССЗ-смертности. Каждые -5 кг хвата = +17% риска.',s:'Leong D. et al. — The Lancet, 2015, PURE study, n=140,000, 17 стран'},{t:'Низкая мышечная масса увеличивает риск смерти в 2 раза у пожилых.',s:'Srikanthan P. — American Journal of Medicine, 2014'},{t:'Компаундные движения дают максимальный острый подъём тестостерона и GH.',s:'Kraemer W. & Ratamess N. — Sports Medicine, 2005'}])}`},
                 {ic:'fa-solid fa-heart-pulse',bg:'var(--bbg)',c:'var(--b)',t:'Zone 2 кардио',s:'2–3x/нед, 30–60 мин',b:`<p>Темп, при котором можешь говорить, но уже некомфортно. Ходьба в гору, лёгкий бег, вело.</p>
 <div class="it"><div class="it-d"></div><div class="it-t">Укрепляет <strong>митохондрии</strong> — клеточные электростанции</div></div>
@@ -1361,74 +1416,83 @@ ${ev([{t:'VO2max — самый сильный предиктор долголе
 <div class="it"><div class="it-d"></div><div class="it-t"><strong>Foam rolling</strong> 2–3x/нед</div></div>`}
             ]},
         nutrition:{t:'Питание',items:[
-                {ic:'fa-solid fa-utensils',bg:'var(--gbg)',c:'var(--g)',t:'Основные принципы',s:'Макросы и режим',b:`<div class="it"><div class="it-d"></div><div class="it-t"><strong>Белок 1.6–2.2 г/кг/день</strong> — 3–4 приёма по 30–50 г. Лейцин-триггер: минимум 2.5 г на приём для запуска mTOR</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Жиры 0.8–1.2 г/кг</strong> — критично для гормонов, клеточных мембран, усвоения витаминов A/D/E/K</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Углеводы</strong> — вокруг тренировки. Сложные: батат, овёс, киноа, гречка, бурый рис</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Клетчатка 30–40 г/день</strong> — кормит микробиом, выводит эстрогены, стабилизирует сахар</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Распределение:</strong> последний приём белка за 1–2 ч до сна (казеин, творог, яйца)</div></div>
+                {ic:'fa-solid fa-utensils',bg:'var(--gbg)',c:'var(--g)',t:'Основные принципы',s:'Макросы и режим',b:`<div class="research-table"><div class="rt-header"><i class="fa-solid fa-utensils"></i>Макронутриенты</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Белок</span> 1.6–2.2 г/кг</div></div><div class="rt-right"><div class="rt-desc">3–4 приёма по 30–50 г. Лейцин-триггер: минимум 2.5 г на приём для запуска mTOR</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Жиры</span> 0.8–1.2 г/кг</div></div><div class="rt-right"><div class="rt-desc">Критично для гормонов, клеточных мембран, усвоения витаминов A/D/E/K</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Углеводы</span></div></div><div class="rt-right"><div class="rt-desc">Вокруг тренировки. Сложные: батат, овёс, киноа, гречка, бурый рис</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Клетчатка</span> 30–40 г</div></div><div class="rt-right"><div class="rt-desc">Кормит микробиом, выводит эстрогены, стабилизирует сахар</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Распределение</span></div></div><div class="rt-right"><div class="rt-desc">Последний приём белка за 1–2 ч до сна (казеин, творог, яйца)</div></div></div></div>
 ${ev([{t:'Оптимальная доза белка: 1.6–2.2 г/кг/день. 4 приёма по 0.4 г/кг максимизируют анаболический ответ.',s:'Morton R. et al. — BJSM, 2018, мета-анализ 49 исследований, n=1,863'},{t:'30г казеина перед сном увеличивает ночной синтез белка на 22% без набора жира.',s:'Snijders T. et al. — Journal of Nutrition, 2015, RCT'},{t:'Low-fat диета (<20%) снижает тестостерон на 10–15%.',s:'Whittaker J. — JSBMB, 2021, мета-анализ 9 RCT'}])}`},
-                {ic:'fa-solid fa-seedling',bg:'var(--gbg)',c:'var(--g)',t:'Крестоцветные',s:'Брокколи, цветная, кале, руккола',badge:'-41% рак',b:`<p>Содержат <strong>сульфорафан</strong> — мощнейший активатор Nrf2 (главный антиоксидантный путь организма). Также <strong>индол-3-карбинол (I3C)</strong> — метаболизирует избыточный эстроген.</p>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Брокколи</strong> — чемпион по сульфорафану. Ростки брокколи содержат в 20–100x больше, чем зрелые соцветия</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Цветная капуста</strong> — глютатион + клетчатка. Универсальный заменитель углеводов</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Кале / руккола</strong> — лютеин для глаз + витамин K для костей и сосудов</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Квашеная капуста</strong> — двойной эффект: крестоцветные + пробиотик</div></div>
+                {ic:'fa-solid fa-seedling',bg:'var(--gbg)',c:'var(--g)',t:'Крестоцветные',s:'Брокколи, цветная, кале, руккола',badge:'-41% рак',b:`<p>Содержат <span class="kw">сульфорафан</span> — мощнейший активатор Nrf2 (главный антиоксидантный путь организма). Также <span class="kw">индол-3-карбинол (I3C)</span> — метаболизирует избыточный эстроген.</p>
+<div class="research-table"><div class="rt-header"><i class="fa-solid fa-seedling"></i>Продукты</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Брокколи</span></div></div><div class="rt-right"><div class="rt-desc">Чемпион по сульфорафану. Ростки содержат в 20–100x больше, чем зрелые соцветия</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title">Цветная <span class="kw">капуста</span></div></div><div class="rt-right"><div class="rt-desc">Глютатион + клетчатка. Универсальный заменитель углеводов</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Кале</span> / руккола</div></div><div class="rt-right"><div class="rt-desc">Лютеин для глаз + витамин K для костей и сосудов</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Квашеная</span> капуста</div></div><div class="rt-right"><div class="rt-desc">Двойной эффект: крестоцветные + пробиотик</div></div></div></div>
 <div class="hl t"><i class="fa-solid fa-mortar-pestle"></i>Жевать сырую или резать за 40 мин до готовки — активирует фермент мирозиназу для выработки сульфорафана. При варке — добавить щепотку горчичного порошка.</div>
 ${ev([{t:'Сульфорафан снижает риск рака простаты на 41%, рака лёгких на 33%, колоректального рака на 44%.',s:'Liu B. et al. — Medicine, 2017, мета-анализ 35 исследований, n=500,000+'},{t:'Сульфорафан активирует Nrf2 — ведущий регулятор антиоксидантной защиты клетки. Усиливает детоксикацию канцерогенов в 2–3 раза.',s:'Houghton C. — Nutrients, 2019, обзор'},{t:'3–5 порций крестоцветных/нед = -18% риск рака (все виды).',s:'Higdon J. — Pharmacological Research, 2007, Oregon State'},{t:'I3C (200–400 мг) нормализует метаболизм эстрогенов: сдвигает 16α-OH → 2-OH (менее канцерогенный путь).',s:'Bradlow H. — In Vivo, 2008'}])}`},
-                {ic:'fa-solid fa-fish',bg:'var(--bbg)',c:'var(--b)',t:'Жирная рыба и Omega-3',s:'2–3 раза в неделю',b:`<p>EPA + DHA — не синтезируются организмом, только из пищи. Критичны для мозга (60% жира мозга — DHA), воспаления, кожи, сердца.</p>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Лосось дикий</strong> — 2.2 г omega-3 на 100 г + астаксантин (каротиноид, антиоксидант в 6000x > вит C)</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Сардины</strong> — максимум omega-3 с минимум ртути. Кости = кальций</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Скумбрия</strong> — 2.6 г omega-3 на 100 г. Бюджетно</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Устрицы</strong> — рекордсмен по цинку (78 мг/100 г), селен, B12</div></div>
+                {ic:'fa-solid fa-fish',bg:'var(--bbg)',c:'var(--b)',t:'Жирная рыба и Omega-3',s:'2–3 раза в неделю',b:`<p><span class="kw">EPA + DHA</span> — не синтезируются организмом, только из пищи. Критичны для мозга (60% жира мозга — DHA), воспаления, кожи, сердца.</p>
+<div class="research-table"><div class="rt-header"><i class="fa-solid fa-fish"></i>Лучшие источники</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title">Дикий <span class="kw">лосось</span></div></div><div class="rt-right"><div class="rt-desc">2.2 г omega-3 на 100 г + астаксантин (каротиноид, антиоксидант в 6000x > вит C)</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Сардины</span></div></div><div class="rt-right"><div class="rt-desc">Максимум omega-3 с минимум ртути. Кости = кальций</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Скумбрия</span></div></div><div class="rt-right"><div class="rt-desc">2.6 г omega-3 на 100 г. Бюджетно</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Устрицы</span></div></div><div class="rt-right"><div class="rt-desc">Рекордсмен по цинку (78 мг/100 г), селен, B12</div></div></div></div>
 <div class="hl w"><i class="fa-solid fa-mercury"></i>Избегать крупных хищных рыб (тунец, рыба-меч) — накопление ртути. Мелкая рыба безопаснее.</div>
 ${ev([{t:'2 порции жирной рыбы/нед = -36% риск смерти от ИБС.',s:'Mozaffarian D. & Rimm E. — JAMA, 2006, мета-анализ'},{t:'Omega-3 индекс >8% = -35% риск внезапной сердечной смерти vs <4%.',s:'Harris W. — Current Atherosclerosis Reports, 2008'},{t:'2 г EPA/день (12 нед) снижает маркер воспаления IL-6 на 10–12%.',s:'Calder P. — PLEFA, 2015, обзор 40+ RCT'},{t:'DHA составляет 97% omega-3 мозга. Дефицит ассоциирован с когнитивным спадом и депрессией.',s:'Weiser M. et al. — Nutrients, 2016'}])}`},
-                {ic:'fa-solid fa-olive',bg:'var(--gbg)',c:'var(--g)',t:'Оливковое масло и жиры',s:'EVOO, авокадо, орехи',badge:'-30% ССЗ',b:`<p><strong>EVOO (Extra Virgin)</strong> — один из самых изученных продуктов в контексте долголетия. Полифенолы олеокантал и гидрокситирозол — мощные противовоспалительные.</p>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>EVOO 2–4 ст.л./день</strong> — на салаты, овощи. Олеокантал работает как ибупрофен</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Авокадо</strong> — мононенасыщенные жиры, калий (больше чем в банане), клетчатка, лютеин</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Грецкие орехи</strong> — ALA (растительная omega-3) + полифенолы. 30 г/день</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Миндаль</strong> — витамин E (главный жирорастворимый антиоксидант), магний</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Семена льна / чиа</strong> — ALA + лигнаны (фитоэстрогены) + клетчатка</div></div>
+                {ic:'fa-solid fa-olive',bg:'var(--gbg)',c:'var(--g)',t:'Оливковое масло и жиры',s:'EVOO, авокадо, орехи',badge:'-30% ССЗ',b:`<p><span class="kw">EVOO (Extra Virgin)</span> — один из самых изученных продуктов в контексте долголетия. Полифенолы олеокантал и гидрокситирозол — мощные противовоспалительные.</p>
+<div class="research-table"><div class="rt-header"><i class="fa-solid fa-olive"></i>Здоровые жиры</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">EVOO</span> 2–4 ст.л.</div></div><div class="rt-right"><div class="rt-desc">На салаты, овощи. Олеокантал работает как ибупрофен</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Авокадо</span></div></div><div class="rt-right"><div class="rt-desc">Мононенасыщенные жиры, калий (больше чем в банане), клетчатка, лютеин</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title">Грецкие <span class="kw">орехи</span></div></div><div class="rt-right"><div class="rt-desc">ALA (растительная omega-3) + полифенолы. 30 г/день</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Миндаль</span></div></div><div class="rt-right"><div class="rt-desc">Витамин E (главный жирорастворимый антиоксидант), магний</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title">Семена <span class="kw">льна</span> / чиа</div></div><div class="rt-right"><div class="rt-desc">ALA + лигнаны (фитоэстрогены) + клетчатка</div></div></div></div>
 ${ev([{t:'>0.5 ст.л. EVOO/день = -19% сердечно-сосудистая смертность и -29% нейродегенерация.',s:'Guasch-Ferré M. — JACC, 2022, Harvard, n=90,000, 28 лет'},{t:'Олеокантал (50 мл EVOO) = ~10% дозы ибупрофена. Хроническое потребление = значимый противовоспалительный эффект.',s:'Beauchamp G. et al. — Nature, 2005'},{t:'Средиземноморская диета + EVOO: -30% сердечных событий vs контроль.',s:'Estruch R. — NEJM, 2018, PREDIMED trial, n=7,447, RCT'}])}`},
-                {ic:'fa-solid fa-apple-whole',bg:'var(--pbg)',c:'var(--p)',t:'Суперфуды и ягоды',s:'Антиоксиданты, полифенолы',b:`<div class="it"><div class="it-d"></div><div class="it-t"><strong>Черника</strong> — антоцианы улучшают память, защищают сосуды, замедляют когнитивный спад</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Гранат</strong> — эллагитанины → уролитин А (митохондриальное обновление). Один из немногих продуктов с прямым омолаживающим эффектом</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Зелёный чай / матча</strong> — EGCG: антиоксидант + активирует аутофагию + термогенез</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Какао (>70%)</strong> — флаванолы снижают давление, улучшают кровоток, когнитивные функции</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Куркума + чёрный перец</strong> — куркумин (противовоспалительный), пиперин увеличивает усвоение на 2000%</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Имбирь</strong> — гингерол снижает мышечную боль после тренировок на 25%</div></div>
+                {ic:'fa-solid fa-apple-whole',bg:'var(--pbg)',c:'var(--p)',t:'Суперфуды и ягоды',s:'Антиоксиданты, полифенолы',b:`<div class="research-table"><div class="rt-header"><i class="fa-solid fa-apple-whole"></i>Суперфуды</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Черника</span></div></div><div class="rt-right"><div class="rt-desc">Антоцианы улучшают память, защищают сосуды, замедляют когнитивный спад</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Гранат</span></div></div><div class="rt-right"><div class="rt-desc">Эллагитанины → уролитин А (митохондриальное обновление). Прямой омолаживающий эффект</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Матча</span> / зелёный чай</div></div><div class="rt-right"><div class="rt-desc">EGCG: антиоксидант + активирует аутофагию + термогенез</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Какао</span> (>70%)</div></div><div class="rt-right"><div class="rt-desc">Флаванолы снижают давление, улучшают кровоток, когнитивные функции</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Куркума</span> + перец</div></div><div class="rt-right"><div class="rt-desc">Куркумин (противовоспалительный), пиперин увеличивает усвоение на 2000%</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Имбирь</span></div></div><div class="rt-right"><div class="rt-desc">Гингерол снижает мышечную боль после тренировок на 25%</div></div></div></div>
 ${ev([{t:'Черника: 1 стакан/день (6 мес) улучшает память и исполнительные функции у пожилых.',s:'Miller M. et al. — Nutrients, 2019, RCT'},{t:'Уролитин А из граната улучшает митохондриальную функцию и мышечную выносливость на 12%.',s:'Andreux P. et al. — Nature Metabolism, 2019, двойное слепое RCT'},{t:'EGCG (зелёный чай): 3–5 чашек/день = -12% all-cause mortality.',s:'Saito E. et al. — Annals of Epidemiology, 2015, n=90,000'},{t:'Какао-флаванолы (500 мг/день) снижают АД на 3–4 мм рт.ст. и улучшают эластичность сосудов.',s:'Hooper L. — Am J Clin Nutr, 2012, мета-анализ 20 RCT'},{t:'Куркумин (1000 мг/день) снижает CRP (маркер воспаления) на 6 мг/л.',s:'Sahebkar A. — Pharmacological Research, 2015, мета-анализ 6 RCT'}])}`},
-                {ic:'fa-solid fa-egg',bg:'var(--ybg)',c:'var(--y)',t:'Лучшие источники белка',s:'Полный аминокислотный профиль',b:`<div class="it"><div class="it-d"></div><div class="it-t"><strong>Яйца</strong> — идеальный аминокислотный профиль (BV=100). Холин для мозга. 2–4 целых яйца/день безопасно</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Курица/индейка</strong> — 31 г белка / 100 г. Основной рабочий источник</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Говядина grass-fed</strong> — креатин, карнозин, B12, железо, CLA. 1–2x/нед</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Творог / греческий йогурт</strong> — казеин (медленный белок) + кальций + пробиотики</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Печень (1x/нед)</strong> — рекордсмен по B12, A, железу, меди, фолату. Природный мультивитамин</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Whey protein</strong> — быстрый, максимум лейцина. Идеально после тренировки</div></div>
+                {ic:'fa-solid fa-egg',bg:'var(--ybg)',c:'var(--y)',t:'Лучшие источники белка',s:'Полный аминокислотный профиль',b:`<div class="research-table"><div class="rt-header"><i class="fa-solid fa-egg"></i>Источники белка</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Яйца</span></div></div><div class="rt-right"><div class="rt-desc">Идеальный аминокислотный профиль (BV=100). Холин для мозга. 2–4 целых яйца/день безопасно</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Курица</span> / индейка</div></div><div class="rt-right"><div class="rt-desc">31 г белка / 100 г. Основной рабочий источник</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Говядина</span> grass-fed</div></div><div class="rt-right"><div class="rt-desc">Креатин, карнозин, B12, железо, CLA. 1–2x/нед</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Творог</span> / йогурт</div></div><div class="rt-right"><div class="rt-desc">Казеин (медленный белок) + кальций + пробиотики</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Печень</span> (1x/нед)</div></div><div class="rt-right"><div class="rt-desc">Рекордсмен по B12, A, железу, меди, фолату. Природный мультивитамин</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Whey</span> protein</div></div><div class="rt-right"><div class="rt-desc">Быстрый, максимум лейцина. Идеально после тренировки</div></div></div></div>
 <div class="hl i"><i class="fa-solid fa-scale-balanced"></i>Правило: 1 г белка = ~5 ккал. 160 г белка = 800 ккал — база любого рациона.</div>
 ${ev([{t:'Потребление яиц (до 3/день) не повышает сердечно-сосудистый риск у здоровых. Холестерин пищи ≠ холестерин крови.',s:'Rong Y. et al. — BMJ, 2013, мета-анализ 17 исследований, n=3.1M'},{t:'Печень (100 г/нед) покрывает >100% потребности в B12, вит A, рибофлавине и меди.',s:'USDA FoodData Central, 2023'},{t:'Whey protein после тренировки: пиковый синтез мышечного белка через 1–3 часа. Эффект: +0.3 кг мышц/мес.',s:'Cermak N. et al. — Am J Clin Nutr, 2012, мета-анализ 22 RCT'}])}`},
-                {ic:'fa-solid fa-jar',bg:'var(--obg)',c:'var(--o)',t:'Ферментированные продукты',s:'Микробиом = второй мозг',b:`<p>95% серотонина вырабатывается в кишечнике. Ферментированные продукты увеличивают разнообразие микробиома эффективнее, чем просто клетчатка.</p>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Квашеная капуста</strong> — Lactobacillus + крестоцветные. Без пастеризации</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Кимчи</strong> — +чеснок, имбирь, перец = доп. антиоксиданты</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Кефир</strong> — 30+ штаммов (vs 2–5 в йогурте). Переносится даже при лактазной недостаточности</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Комбуча</strong> — уксусная кислота + полифенолы чая. Без добавленного сахара</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Мисо</strong> — соевый пробиотик, богат K2</div></div>
+                {ic:'fa-solid fa-jar',bg:'var(--obg)',c:'var(--o)',t:'Ферментированные продукты',s:'Микробиом = второй мозг',b:`<p><span class="kw">95% серотонина</span> вырабатывается в кишечнике. Ферментированные продукты увеличивают разнообразие микробиома эффективнее, чем просто клетчатка.</p>
+<div class="research-table"><div class="rt-header"><i class="fa-solid fa-jar"></i>Продукты</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Квашеная</span> капуста</div></div><div class="rt-right"><div class="rt-desc">Lactobacillus + крестоцветные. Без пастеризации</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Кимчи</span></div></div><div class="rt-right"><div class="rt-desc">+чеснок, имбирь, перец = доп. антиоксиданты</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Кефир</span></div></div><div class="rt-right"><div class="rt-desc">30+ штаммов (vs 2–5 в йогурте). Переносится даже при лактазной недостаточности</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Комбуча</span></div></div><div class="rt-right"><div class="rt-desc">Уксусная кислота + полифенолы чая. Без добавленного сахара</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Мисо</span></div></div><div class="rt-right"><div class="rt-desc">Соевый пробиотик, богат K2</div></div></div></div>
 <div class="hl t"><i class="fa-solid fa-chart-line"></i>Цель: 2–6 порций/день. Начинать с 1, иначе вздутие.</div>
 ${ev([{t:'6 порций ферментированных/день (10 нед): микробиомное разнообразие ↑, 19 маркеров воспаления ↓. Более эффективно, чем высококлетчаточная диета.',s:'Sonnenburg J. et al. — Cell, 2021, Stanford, RCT'},{t:'Кимчи (3 порции/день, 4 нед) снижает уровень холестерина LDL и глюкозу натощак.',s:'Kim E.K. et al. — Nutrition Research, 2011, RCT'},{t:'Кефир увеличивает колонизацию полезных бактерий в кишечнике на 20–30% за 4 недели.',s:'Pražnikar Z.J. et al. — Nutrients, 2020, RCT'}])}`},
-                {ic:'fa-solid fa-triangle-exclamation',bg:'var(--rbg)',c:'var(--r)',t:'Что исключить / минимизировать',s:'Сахар, масла, ультрапереработка',b:`<div class="it"><div class="it-d"></div><div class="it-t"><strong>Сахар / фруктоза</strong> — гликация → AGEs → «склеивание» коллагена → морщины, сосуды, почки. Каждый +1 mmol/L глюкозы = +5 мес воспринимаемого возраста</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Seed oils</strong> (подсолнечное, соевое, кукурузное) — omega-6 перекос → хроническое воспаление. Заменить на EVOO, кокосовое, топлёное масло</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Ультрапереработанная еда</strong> — эмульгаторы разрушают слизистую кишечника, консерванты убивают микробиом</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Транс-жиры</strong> — маргарин, фритюр, выпечка. Увеличивают LDL и воспаление</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Алкоголь</strong> — нет безопасной дозы. Разрушает сон, снижает T, нейротоксичен, ускоряет старение лица</div></div>
+                {ic:'fa-solid fa-triangle-exclamation',bg:'var(--rbg)',c:'var(--r)',t:'Что исключить / минимизировать',s:'Сахар, масла, ультрапереработка',b:`<div class="research-table"><div class="rt-header"><i class="fa-solid fa-triangle-exclamation"></i>Избегать</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw-r">Сахар</span> / фруктоза</div></div><div class="rt-right"><div class="rt-desc">Гликация → AGEs → «склеивание» коллагена → морщины, сосуды, почки. +1 mmol/L глюкозы = +5 мес возраста</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw-r">Seed oils</span></div></div><div class="rt-right"><div class="rt-desc">Подсолнечное, соевое, кукурузное — omega-6 перекос → хроническое воспаление</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw-r">UPF</span> еда</div></div><div class="rt-right"><div class="rt-desc">Эмульгаторы разрушают слизистую кишечника, консерванты убивают микробиом</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw-r">Транс-жиры</span></div></div><div class="rt-right"><div class="rt-desc">Маргарин, фритюр, выпечка. Увеличивают LDL и воспаление</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw-r">Алкоголь</span></div></div><div class="rt-right"><div class="rt-desc">Нет безопасной дозы. Разрушает сон, снижает T, нейротоксичен, ускоряет старение</div></div></div></div>
 <div class="hl w"><i class="fa-solid fa-ban"></i>Каждые 10% калорий из ультрапереработанной еды = +14% смертность.</div>
 ${ev([{t:'AGEs — основной механизм внутреннего старения. Высокогликемическая диета ускоряет накопление AGEs на 25–40%.',s:'Danby F.W. — Clinics in Dermatology, 2010'},{t:'Каждые +10% UPF (ультрапереработанной еды) в рационе = +14% all-cause mortality.',s:'Schnabel L. et al. — JAMA Internal Medicine, 2019, n=44,551'},{t:'Даже 1 бокал алкоголя/день ассоциирован с уменьшением объёма мозга.',s:'Daviet R. et al. — Nature Communications, 2022, UK Biobank, n=36,678'},{t:'Omega-6/omega-3 соотношение: западная диета = 15:1. Оптимально = 1:1–4:1. Перекос → воспаление.',s:'Simopoulos A. — Biomedicine & Pharmacotherapy, 2002'}])}`}
             ]},
         sleep:{t:'Сон',items:[
-                {ic:'fa-solid fa-moon',bg:'var(--pbg)',c:'var(--p)',t:'Гигиена сна',s:'Базовые правила',b:`<div class="it"><div class="it-d"></div><div class="it-t"><strong>7–8.5 часов</strong> каждую ночь</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Стабильное время</strong> ±30 мин (и в выходные)</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>18–20°C</strong> в спальне — критично для глубокого сна</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Полная темнота</strong> — blackout шторы + маска</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Нет кофеина после 14:00</strong> (полувыведение 5–6 ч)</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Утренний свет</strong> — первые 30 мин после пробуждения</div></div>
+                {ic:'fa-solid fa-moon',bg:'var(--pbg)',c:'var(--p)',t:'Гигиена сна',s:'Базовые правила',b:`<div class="research-table"><div class="rt-header"><i class="fa-solid fa-moon"></i>Правила сна</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">7–8.5</span> часов</div></div><div class="rt-right"><div class="rt-desc">Каждую ночь — не подлежит компромиссу</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Стабильное</span> время</div></div><div class="rt-right"><div class="rt-desc">±30 мин каждый день, включая выходные</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">18–20°C</span></div></div><div class="rt-right"><div class="rt-desc">В спальне — критично для глубокого сна</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title">Полная <span class="kw">темнота</span></div></div><div class="rt-right"><div class="rt-desc">Blackout шторы + маска для сна</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title">Нет <span class="kw">кофеина</span> после 14:00</div></div><div class="rt-right"><div class="rt-desc">Полувыведение 5–6 ч, блокирует аденозин</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Утренний</span> свет</div></div><div class="rt-right"><div class="rt-desc">Первые 30 мин после пробуждения — запуск циркадного ритма</div></div></div></div>
 <div class="hl w"><i class="fa-solid fa-wine-glass"></i>Алкоголь убивает глубокий сон и REM — даже 1–2 бокала.</div>
 ${ev([{t:'Сон <6 ч = +12% смертность. <5 ч = +30% деменция.',s:'Walker M. — Why We Sleep; Cappuccio F. et al. — Sleep, 2010, n=1.3M'},{t:'5 ночей по 5 ч снижают T на 10–15% — старение на 10–15 лет по гормонам.',s:'Leproult R. & Van Cauter E. — JAMA, 2011'},{t:'Утренний яркий свет (10,000+ lux) улучшает качество сна на 65%.',s:'Terman M. et al. — Archives of General Psychiatry, 2001'}])}`},
-                {ic:'fa-solid fa-pills',bg:'var(--obg)',c:'var(--o)',t:'Стек для сна',s:'За 1 час до сна',b:`<div class="sg">
+                {ic:'fa-solid fa-pills',bg:'var(--obg)',c:'var(--o)',t:'Стек для сна',s:'За 1 час до сна',b:`<div class="sg"><div class="sg-header"><i class="fa-solid fa-pills"></i>Стек для сна</div>
 <div class="sr"><span class="sn">Магний глицинат</span><span class="sd">300–400 мг</span><span class="sw">Расслабление ЦНС</span></div>
 <div class="sr"><span class="sn">L-теанин</span><span class="sd">200 мг</span><span class="sw">Альфа-волны мозга</span></div>
 <div class="sr"><span class="sn">Apigenin</span><span class="sd">50 мг</span><span class="sw">GABAэргический</span></div>
@@ -1437,22 +1501,24 @@ ${ev([{t:'Сон <6 ч = +12% смертность. <5 ч = +30% деменци�
 </div>
 <div class="hl i"><i class="fa-solid fa-stethoscope"></i>Sleep apnea — храп, усталость, паузы в дыхании → полисомнография обязательно.</div>
 ${ev([{t:'Магний глицинат улучшает качество сна и снижает кортизол у людей с дефицитом.',s:'Abbasi B. et al. — JRMS, 2012, двойное слепое RCT'},{t:'L-теанин (200 мг) повышает альфа-волны мозга за 30 мин.',s:'Nobre A. et al. — Nutritional Neuroscience, 2008'},{t:'Глицин (3 г) снижает ядро температуры тела и улучшает сон.',s:'Bannai M. et al. — Sleep and Biological Rhythms, 2012'}])}`},
-                {ic:'fa-solid fa-bed',bg:'var(--cbg)',c:'var(--c)',t:'Циркадный ритм',s:'Внутренние часы',b:`<p>Супрахиазматическое ядро — главные биочасы. Свет утром их запускает, свет вечером ломает.</p>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Утро (0–30 мин):</strong> яркий свет 10,000+ lux → кортизол ↑, мелатонин ↓. Устанавливает весь суточный цикл</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Вечер (-2ч до сна):</strong> dim lights, blue-blockers. Каждый фотон синего света подавляет мелатонин</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Стабильность:</strong> ±30 мин каждый день, вкл. выходные. Social jetlag = +11% смертность</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Кофеин:</strong> блокирует аденозин. Полувыведение 5–6 ч → кофе после 14:00 разрушает глубокий сон</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Алкоголь:</strong> усыпляет, но убивает REM на 24–39%. Даже 1 бокал</div></div>
+                {ic:'fa-solid fa-bed',bg:'var(--cbg)',c:'var(--c)',t:'Циркадный ритм',s:'Внутренние часы',b:`<p>Супрахиазматическое ядро — главные <span class="kw">биочасы</span>. Свет утром их запускает, свет вечером ломает.</p>
+<div class="research-table"><div class="rt-header"><i class="fa-solid fa-bed"></i>Управление ритмом</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Утро</span> (0–30 мин)</div></div><div class="rt-right"><div class="rt-desc">Яркий свет 10,000+ lux → кортизол ↑, мелатонин ↓. Устанавливает суточный цикл</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Вечер</span> (-2ч до сна)</div></div><div class="rt-right"><div class="rt-desc">Dim lights, blue-blockers. Каждый фотон синего подавляет мелатонин</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Стабильность</span></div></div><div class="rt-right"><div class="rt-desc">±30 мин каждый день, вкл. выходные. Social jetlag = +11% смертность</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw-r">Кофеин</span></div></div><div class="rt-right"><div class="rt-desc">Блокирует аденозин. Полувыведение 5–6 ч → кофе после 14:00 разрушает глубокий сон</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw-r">Алкоголь</span></div></div><div class="rt-right"><div class="rt-desc">Усыпляет, но убивает REM на 24–39%. Даже 1 бокал</div></div></div></div>
 ${ev([{t:'Social jetlag (разница графика будни/выходные) ассоциирован с +11% смертностью и метаболическим синдромом.',s:'Parsons M. et al. — Sleep, 2015; Roenneberg T. — Current Biology, 2012'},{t:'Синий свет вечером подавляет мелатонин на 50% и сдвигает циркадный ритм на 1.5 ч.',s:'Chang A. et al. — PNAS, 2015'},{t:'Кофеин за 6 ч до сна уменьшает общее время сна на 1 час.',s:'Drake C. et al. — JCSM, 2013'}])}` },
-                {ic:'fa-solid fa-chart-bar',bg:'var(--gbg)',c:'var(--g)',t:'Трекинг и гаджеты',s:'Oura, Whoop, Apple Watch',b:`<div class="it"><div class="it-d"></div><div class="it-t"><strong>Oura Ring</strong> — лучший трекер сна. HRV, температура, стадии сна. $300 + $6/мес</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Whoop</strong> — recovery score, strain. Хорош для атлетов. $30/мес</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Apple Watch</strong> — базовый трекинг, удобно если уже носишь</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Eight Sleep</strong> — матрас с терморегуляцией. Оптимизирует температуру всю ночь. $2000+</div></div>
-<div class="it"><div class="it-d"></div><div class="it-t"><strong>Ключевые метрики:</strong> HRV (выше = лучше), RHR (ниже = лучше), % глубокого сна (>15%), REM (>20%)</div></div>
+                {ic:'fa-solid fa-chart-bar',bg:'var(--gbg)',c:'var(--g)',t:'Трекинг и гаджеты',s:'Oura, Whoop, Apple Watch',b:`<div class="research-table"><div class="rt-header"><i class="fa-solid fa-chart-bar"></i>Гаджеты для сна</div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Oura</span> Ring</div></div><div class="rt-right"><div class="rt-desc">Лучший трекер сна. HRV, температура, стадии сна. $300 + $6/мес</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Whoop</span></div></div><div class="rt-right"><div class="rt-desc">Recovery score, strain. Хорош для атлетов. $30/мес</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Apple</span> Watch</div></div><div class="rt-right"><div class="rt-desc">Базовый трекинг, удобно если уже носишь</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Eight Sleep</span></div></div><div class="rt-right"><div class="rt-desc">Матрас с терморегуляцией. Оптимизирует температуру всю ночь. $2000+</div></div></div>
+<div class="rt-row"><div class="rt-left"><div class="rt-title"><span class="kw">Метрики</span></div></div><div class="rt-right"><div class="rt-desc">HRV (выше = лучше), RHR (ниже = лучше), глубокий сон >15%, REM >20%</div></div></div></div>
 <div class="hl i"><i class="fa-solid fa-lightbulb"></i>Не оптимизируй цифры ради цифр — фокус на самочувствии. Orthosomnia (тревога из-за трекера) реальна.</div>` }
             ]},
         supplements:{t:'Добавки',items:[
-                {ic:'fa-solid fa-capsules',bg:'var(--gbg)',c:'var(--g)',t:'Базовый стек',s:'Ежедневно',b:`<div class="sg">
+                {ic:'fa-solid fa-capsules',bg:'var(--gbg)',c:'var(--g)',t:'Базовый стек',s:'Ежедневно',b:`<div class="sg"><div class="sg-header"><i class="fa-solid fa-capsules"></i>Ежедневный стек</div>
 <div class="sr"><span class="sn">Витамин D3</span><span class="sd">2000–5000 IU</span><span class="sw">Иммунитет, кости, T</span></div>
 <div class="sr"><span class="sn">Omega-3</span><span class="sd">2–3 г</span><span class="sw">Воспаление, мозг, кожа</span></div>
 <div class="sr"><span class="sn">Магний</span><span class="sd">300–400 мг</span><span class="sw">Сон, стресс, 300+ ферментов</span></div>
@@ -1463,7 +1529,7 @@ ${ev([{t:'Social jetlag (разница графика будни/выходны
 <div class="sr"><span class="sn">Ashwagandha</span><span class="sd">600 мг</span><span class="sw">T +17%, кортизол -28%</span></div>
 </div>
 ${ev([{t:'Ashwagandha KSM-66 (600 мг, 8 нед): T +17%, сила +10%, кортизол -28%.',s:'Wankhede S. et al. — JISSN, 2015, двойное слепое RCT, n=57'},{t:'Креатин — самая исследованная спортдобавка (700+ исследований). Также улучшает когнитивные функции.',s:'Kreider R. et al. — JISSN, 2017, позиция ISSN'},{t:'D3 (3,332 IU/день, 12 мес) повысил T на 25% у мужчин с дефицитом.',s:'Pilz S. et al. — Hormone and Metabolic Research, 2011, RCT'},{t:'Коллаген (2.5–15 г/день) улучшает эластичность кожи через 8 недель.',s:'Bolke L. et al. — Nutrients, 2019, мета-анализ 11 исследований'}])}`},
-                {ic:'fa-solid fa-flask',bg:'var(--pbg)',c:'var(--p)',t:'Продвинутый стек',s:'С врачом',b:`<div class="sg">
+                {ic:'fa-solid fa-flask',bg:'var(--pbg)',c:'var(--p)',t:'Продвинутый стек',s:'С врачом',b:`<div class="sg"><div class="sg-header"><i class="fa-solid fa-flask"></i>Продвинутый стек</div>
 <div class="sr"><span class="sn">NMN / NR</span><span class="sd">500 мг</span><span class="sw">NAD+ для клеток</span></div>
 <div class="sr"><span class="sn">Берберин</span><span class="sd">500 мг 2x</span><span class="sw">Сахар, AMPK</span></div>
 <div class="sr"><span class="sn">Tongkat Ali</span><span class="sd">200–400 мг</span><span class="sw">Свободный T</span></div>
@@ -1483,7 +1549,7 @@ ${ev([{t:'NMN (250 мг/день, 12 нед) повышает NAD+ и улучш
 </div>
 <div class="hl i"><i class="fa-solid fa-vial"></i>Ключевой маркер: hs-CRP. Цель: <1.0 мг/л. Если >3.0 — серьёзное воспаление, ищи причину.</div>
 ${ev([{t:'NAC повышает внутриклеточный глутатион на 30–50%. Глутатион — «главный антиоксидант» организма.',s:'Rushworth G. & Megson I. — Pharmacology & Therapeutics, 2014'},{t:'Кверцетин + дасатиниб — первый сенолитик, убивающий сенесцентные клетки у людей. Снижает маркеры воспаления.',s:'Hickson L. et al. — EBioMedicine, 2019, Mayo Clinic, клинический trial'},{t:'Куркумин (1000 мг/день, 8 нед) снижает CRP на 6 мг/л и TNF-α на 30%.',s:'Sahebkar A. — Pharmacological Research, 2015, мета-анализ 6 RCT'}])}` },
-                {ic:'fa-solid fa-brain',bg:'var(--cbg)',c:'var(--c)',t:'Когнитивные / ноотропы',s:'Мозг и фокус',b:`<div class="sg">
+                {ic:'fa-solid fa-brain',bg:'var(--cbg)',c:'var(--c)',t:'Когнитивные / ноотропы',s:'Мозг и фокус',b:`<div class="sg"><div class="sg-header"><i class="fa-solid fa-brain"></i>Ноотропы</div>
 <div class="sr"><span class="sn">Креатин</span><span class="sd">5 г/день</span><span class="sw">ATP в мозге ↑, память, IQ +5–15%</span></div>
 <div class="sr"><span class="sn">Omega-3 DHA</span><span class="sd">1–2 г</span><span class="sw">97% omega-3 мозга = DHA</span></div>
 <div class="sr"><span class="sn">Lion's Mane</span><span class="sd">1000 мг</span><span class="sw">NGF ↑, нейрогенез</span></div>
@@ -1494,7 +1560,7 @@ ${ev([{t:'NAC повышает внутриклеточный глутатион
 </div>
 <div class="hl t"><i class="fa-solid fa-lightbulb"></i>Лучший ноотроп: сон 8ч + силовые + Zone 2 + медитация. Добавки — финишный штрих.</div>
 ${ev([{t:'Креатин (5 г/день, 6 нед) улучшает рабочую память и интеллект на 5–15%, особенно в условиях стресса и недосыпа.',s:'Rae C. et al. — Proceedings Royal Society B, 2003; Avgerinos K. — Experimental Gerontology, 2018'},{t:'Lion\'s Mane стимулирует выработку NGF (nerve growth factor) и улучшает когнитивные функции у пожилых.',s:'Mori K. et al. — Phytotherapy Research, 2009, двойное слепое RCT'},{t:'L-теанин + кофеин: синергия. Улучшают внимание и скорость реакции больше, чем каждый по отдельности.',s:'Haskell C. et al. — Biological Psychology, 2008, RCT'}])}` },
-                {ic:'fa-solid fa-heart',bg:'var(--rbg)',c:'var(--r)',t:'Суставы и связки',s:'Профилактика травм',b:`<div class="sg">
+                {ic:'fa-solid fa-heart',bg:'var(--rbg)',c:'var(--r)',t:'Суставы и связки',s:'Профилактика травм',b:`<div class="sg"><div class="sg-header"><i class="fa-solid fa-heart"></i>Суставы</div>
 <div class="sr"><span class="sn">Коллаген II типа</span><span class="sd">40 мг (UC-II)</span><span class="sw">Хрящи, суставы</span></div>
 <div class="sr"><span class="sn">Глюкозамин + хондроитин</span><span class="sd">1500+1200 мг</span><span class="sw">Хрящевая ткань</span></div>
 <div class="sr"><span class="sn">MSM</span><span class="sd">1–3 г</span><span class="sw">Сера для соединительной ткани</span></div>
@@ -1947,13 +2013,13 @@ ${ev([{t:'Активное восстановление (лёгкое карди
         const ks=Object.keys(P);
         const tabIcons={training:'fa-solid fa-dumbbell',nutrition:'fa-solid fa-utensils',sleep:'fa-solid fa-moon',supplements:'fa-solid fa-capsules',skin:'fa-solid fa-sun',body:'fa-solid fa-crosshairs',hormones:'fa-solid fa-fire',gut:'fa-solid fa-seedling',breathing:'fa-solid fa-wind',biohacking:'fa-solid fa-flask',teeth:'fa-solid fa-tooth',fasting:'fa-solid fa-hourglass-half',monitoring:'fa-solid fa-vial',stress:'fa-solid fa-brain',longevity:'fa-solid fa-dna',posture:'fa-solid fa-user-check',water:'fa-solid fa-droplet',recovery:'fa-solid fa-battery-three-quarters'};
         const sectionColors={training:'var(--text2)',nutrition:'var(--text2)',sleep:'var(--text2)',supplements:'var(--text2)',skin:'var(--text2)',body:'var(--text2)',hormones:'var(--text2)',gut:'var(--text2)',breathing:'var(--text2)',biohacking:'var(--text2)',teeth:'var(--text2)',fasting:'var(--text2)',monitoring:'var(--text2)',stress:'var(--text2)',longevity:'var(--text2)',posture:'var(--text2)',water:'var(--text2)',recovery:'var(--text2)'};
-        const cardGrid=ks.map(k=>{const s=P[k];const col=sectionColors[k]||'var(--g)';const ic=tabIcons[k]||'fa-solid fa-star';return `<div class="explore-card" onclick="switchExploreView('list');setTimeout(()=>spt('${k}'),100)" style="border-color:${col.replace('var(','rgba(').replace(')','')}20)"><div class="ec-glow" style="background:${col}"></div><i class="${ic} ec-icon" style="color:${col}"></i><div class="ec-badge" style="background:${col.replace('var(','rgba(').replace(')','')}15);color:${col}">${s.items.length}</div><div class="ec-title">${s.t}</div><div class="ec-sub">${s.items.length} карточек</div></div>`}).join('');
+        const cardGrid=ks.map(k=>{const s=P[k];const ic=tabIcons[k]||'fa-solid fa-star';return `<div class="explore-card" onclick="switchExploreView('list');setTimeout(()=>spt('${k}'),100)"><i class="${ic} ec-icon"></i><div class="ec-badge">${s.items.length}</div><div class="ec-title">${s.t}</div><div class="ec-sub">${s.items.length} карточек</div></div>`}).join('');
         document.getElementById('pg-explore').innerHTML=`
     <div class="ph"><h1><i class="fa-solid fa-compass" style="margin-right:8px;font-size:18px;color:var(--g)"></i>Explore</h1><p>${Object.keys(P).length} разделов · доказательная база</p></div>
     <div class="explore-toggle"><button class="on" onclick="switchExploreView('grid')">Карточки</button><button onclick="switchExploreView('list')">Список</button></div>
     <div id="exploreGrid" class="explore-grid">${cardGrid}</div>
     <div id="exploreList" style="display:none"><div class="ptabs-wrap"><div class="ptabs" id="ptabs">${ks.map((k,i)=>`<div class="pt${i===0?' on':''}" data-s="${k}"><i class="${tabIcons[k]||''}" style="margin-right:4px;font-size:10px;opacity:.7"></i>${P[k].t}</div>`).join('')}</div></div>
-    <div class="pcont" id="pcont">${ks.map((k,i)=>`<div class="ps${i===0?' on':''}" data-s="${k}">${P[k].items.map(a=>{
+    <div class="pcont" id="pcont">${ks.map((k,i)=>`<div class="ps${i===0?' on':''}" data-s="${k}"><div class="section-hero"><div class="section-hero-badge"><i class="${tabIcons[k]||'fa-solid fa-star'}" style="font-size:10px"></i>${P[k].t.toUpperCase()}</div><div class="section-hero-title">${P[k].t}</div><div class="section-hero-sub">${P[k].items.length} карточек · доказательная база</div></div>${P[k].items.map(a=>{
             const badge=a.badge?`<span class="ac-badge" style="background:${a.bg};color:${a.c}">${a.badge}</span>`:'';
             return `<div class="ac"><div class="ac-h"><div class="ac-ic" style="background:${a.bg};color:${a.c}"><i class="${a.ic}"></i></div><div class="ac-inf"><h3>${a.t}${badge}</h3><span>${a.s}</span></div><i class="fa-solid fa-chevron-down ac-arr"></i></div><div class="ac-bd"><div class="ac-in">${a.b}</div></div></div>`;
         }).join('')}</div>`).join('')}</div>`;
